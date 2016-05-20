@@ -17,6 +17,7 @@ import fr from 'react-intl/locale-data/fr';
 import no from 'react-intl/locale-data/no';
 import pt from 'react-intl/locale-data/pt';
 import ro from 'react-intl/locale-data/ro';
+import Slider from 'material-ui/Slider'
 
 addLocaleData([cs, de, es, en, fr, no, pt, ro]);
 

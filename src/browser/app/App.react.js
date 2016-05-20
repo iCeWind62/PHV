@@ -7,6 +7,11 @@ import React, { PropTypes } from 'react';
 import start from '../../common/app/start';
 import { connect } from 'react-redux';
 import { locationShape } from 'react-router';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Sidemenu from '../Components/Sidemenu/Sidemenu';
+import Title from '../Components/Title/Title';
+import Slider from 'material-ui/Slider';
 
 // v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 const bootstrap4Metas = [
@@ -21,6 +26,7 @@ const bootstrap4Metas = [
   }
 ];
 
+
 class App extends Component {
 
   static propTypes = {
@@ -28,12 +34,17 @@ class App extends Component {
     currentLocale: PropTypes.string.isRequired,
     location: locationShape
   };
-
   render() {
     const { children, currentLocale, location } = this.props;
 
     return (
       <div className="container">
+        <MuiThemeProvider muiTheme={getMuiTheme()}>
+          <div>
+            <Title />
+            <Sidemenu />
+          </div>
+        </MuiThemeProvider>
         <Helmet
           htmlAttributes={{ lang: currentLocale }}
           titleTemplate="%s - Este.js"
@@ -49,9 +60,6 @@ class App extends Component {
           ]}
         />
         {/* Pass location to ensure header active links are updated. */}
-        <Header location={location} />
-        {children}
-        <Footer />
       </div>
     );
   }
