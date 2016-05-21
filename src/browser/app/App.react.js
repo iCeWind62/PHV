@@ -11,7 +11,6 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Sidemenu from '../Components/Sidemenu/Sidemenu';
 import Title from '../Components/Title/Title';
-import Slider from 'material-ui/Slider';
 
 // v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 const bootstrap4Metas = [
@@ -28,7 +27,6 @@ const bootstrap4Metas = [
 
 
 class App extends Component {
-
   static propTypes = {
     children: PropTypes.object.isRequired,
     currentLocale: PropTypes.string.isRequired,
@@ -42,7 +40,6 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme()}>
           <div>
             <Title />
-            <Sidemenu />
           </div>
         </MuiThemeProvider>
         <Helmet

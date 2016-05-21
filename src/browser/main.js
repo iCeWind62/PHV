@@ -17,7 +17,13 @@ import fr from 'react-intl/locale-data/fr';
 import no from 'react-intl/locale-data/no';
 import pt from 'react-intl/locale-data/pt';
 import ro from 'react-intl/locale-data/ro';
-import Slider from 'material-ui/Slider'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+//Needed for onTouchTap
+//Can go away when react 1.0 release
+//Check this repo:
+//https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
 
 addLocaleData([cs, de, es, en, fr, no, pt, ro]);
 
