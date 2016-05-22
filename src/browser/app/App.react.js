@@ -7,10 +7,6 @@ import React, { PropTypes } from 'react';
 import start from '../../common/app/start';
 import { connect } from 'react-redux';
 import { locationShape } from 'react-router';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Sidemenu from '../Components/Sidemenu/Sidemenu';
-import Title from '../Components/Title/Title';
 
 // v4-alpha.getbootstrap.com/getting-started/introduction/#starter-template
 const bootstrap4Metas = [
@@ -37,11 +33,6 @@ class App extends Component {
 
     return (
       <div className="container">
-        <MuiThemeProvider muiTheme={getMuiTheme()}>
-          <div>
-            <Title />
-          </div>
-        </MuiThemeProvider>
         <Helmet
           htmlAttributes={{ lang: currentLocale }}
           titleTemplate="%s - Este.js"

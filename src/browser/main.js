@@ -5,7 +5,7 @@ import configureStore from '../common/configureStore';
 import createEngine from 'redux-storage-engine-localstorage';
 import createRoutes from './createRoutes';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { addLocaleData } from 'react-intl';
 import { routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 
@@ -18,6 +18,9 @@ import no from 'react-intl/locale-data/no';
 import pt from 'react-intl/locale-data/pt';
 import ro from 'react-intl/locale-data/ro';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Title from './Components/Title/Title';
+import Sidemenu from './Components/Sidemenu/Sidemenu';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router'
 
 //Needed for onTouchTap
 //Can go away when react 1.0 release
@@ -42,10 +45,10 @@ const history = syncHistoryWithStore(browserHistory, store);
 const routes = createRoutes(store.getState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      {routes}
+    <Router history={hashHistory}>
+      <Route path = "/" component={Title}>
+        <Route path ="testPath" component={Sidemenu}/>
+      </Route>
     </Router>
-  </Provider>
   , document.getElementById('app')
 );
